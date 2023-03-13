@@ -1,4 +1,6 @@
 <?php
+    use Ramsey\Uuid\Uuid;
+    
     class Dog {
         private $id;
 
@@ -7,7 +9,7 @@
             private int $wiek,
             private string $dataPrzyjecia
         ) {
-            $this->id = random_bytes(16);
+            $this->id = Uuid::uuid4();
         }
 
         public function __toString() {
